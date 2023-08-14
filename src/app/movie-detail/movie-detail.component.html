@@ -1,0 +1,15 @@
+<div class="card" *ngIf="moviie">
+  <div class="card-body">
+  <span>
+    id:{{ moviie?.id}} name:{{moviie?.name}}
+  </span>
+    <div class="input-group">
+      <input type="text" [(ngModel)]="moviie.name" class="form-control">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button">
+          Update
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
