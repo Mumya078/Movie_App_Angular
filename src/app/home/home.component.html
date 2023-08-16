@@ -1,13 +1,64 @@
 <div class="container">
-  <div class="row">
+  <div class="row d-flex justify-content-center">
     <search></search>
-
-    <div style="background: #7a672c">
-      <div class="slide-container">
-        <div class="slide-content">
-
+    <div class="justify-content-center d-flex">
+      <slider></slider>
+    </div>
+    <section>
+    <div class="container">
+      <!-- row -->
+      <div class="row">
+        <!-- section title -->
+        <div class="container">
+              <nav class="navbar-expand navbar container">
+                <div class="container-md justify-content-between container-fluid">
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav justify-content-center container-fluid">
+                      <li class="nav-item">
+                          <div>
+                            <a  class="nav-link active yazi1" aria-current="page" style="color: white">
+                              NowPlaying
+                            </a>
+                          </div>
+                      </li>
+                      <li class="nav-item">
+                        <div>
+                          <a  class="nav-link active yazi1" aria-current="page" style="color: white">
+                            Upcoming
+                          </a>
+                        </div>
+                      </li>
+                      <li class="nav-item">
+                        <div>
+                          <a  class="nav-link active yazi1" aria-current="page" style="color: white">
+                            TopRated
+                          </a>
+                        </div>
+                      </li>
+                      <li class="nav-item">
+                        <div>
+                          <a  class="nav-link active yazi1" aria-current="page" style="color: white">
+                            Popular
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+        </div>
+        <!-- /section title -->
+        <div class="container mt-5">
+          <div class="product-container" style="padding-bottom: 60px">
+            <div *ngFor="let post of posts" class="product-card">
+              <img class="imgs" [src]="'https://image.tmdb.org/t/p/w500' + post.poster_path">
+            </div>
+            <!-- Diğer ürün kartları buraya eklenir -->
+          </div>
         </div>
       </div>
+      <!-- /row -->
     </div>
-  </div>
+    </section>
 </div>
+

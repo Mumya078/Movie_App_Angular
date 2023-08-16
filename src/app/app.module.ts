@@ -13,6 +13,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { SearchComponent } from './search/search.component';
+import { SliderComponent } from './slider/slider.component';
+import { MenuComponent } from './menu/menu.component';
+import { HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -25,10 +28,13 @@ import { SearchComponent } from './search/search.component';
     DashboardComponent,
     HomeComponent,
     TopbarComponent,
-    SearchComponent
+    SearchComponent,
+    SliderComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     AppRoutingModule
   ],

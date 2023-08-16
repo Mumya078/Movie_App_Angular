@@ -1,18 +1,10 @@
-<movie-detail [moviie]="selectedMovie"></movie-detail>
-
+<!-- <movie-detail [moviie]="selectedMovie"></movie-detail> -->
 <div class="card">
-  <div class="card-header">
-     {{title}}
-  </div>
-<ul class="list-group list-group-flush">
-  <li *ngFor="let movie of movies" (click)="onSelect(movie)"
-      class="list-group-item active"
-  [class.active]="movie===selectedMovie"
-  >
-    <span class="bg-primary">{{movie.id}}</span>
-    {{movie.name}}
-    <span class="close">x</span>
-  </li>
-</ul>
+ <ul>
+   <li *ngFor="let post of posts">
+     {{post.title}}
+     <img [src]="'https://image.tmdb.org/t/p/w500' + post.poster_path">
+   </li>
+ </ul>
 </div>
 

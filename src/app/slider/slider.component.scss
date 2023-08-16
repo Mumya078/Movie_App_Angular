@@ -1,0 +1,29 @@
+.c-item{
+height: 250px;
+position: relative;
+}
+
+.c-img{
+  height: 100%;
+  object-fit: fill;
+  position: absolute;
+  border-radius: 16px;
+}
+
+.slider{
+  width: 200px;
+  height: 350px;
+  padding: 10px;
+  justify-content: center;
+}
+
+.span{
+  position: absolute;
+  -webkit-text-fill-color: #242A32;
+  -webkit-text-stroke-width:2px;
+  -webkit-text-stroke-color:deepskyblue;
+  font-size: 145px;
+  left: -5px;
+  top: 74px;
+  font-family: 'Roboto Mono', monospace;
+}
