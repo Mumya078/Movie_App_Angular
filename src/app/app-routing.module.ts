@@ -4,10 +4,12 @@ import {RouterModule,Routes} from "@angular/router";
 import {MoviesComponents} from "./movies/movies.components";
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import {HomeComponent} from "./home/home.component";
+import {MovieDetailComponent} from "./movie-detail/movie-detail.component";
 
 const routes:Routes=[
   {path:'',redirectTo:'/home',pathMatch:'full'},
   {path:'movies',component:MoviesComponents},
+  {path:'detail/:id',component:MovieDetailComponent},
   {path:'dashboard',component:DashboardComponent},
   {path:'home',component:HomeComponent}
 ]

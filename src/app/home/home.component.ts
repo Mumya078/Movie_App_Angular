@@ -1,8 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, Input, OnInit, Output} from '@angular/core';
 import {MovieService} from "../movie.service";
 import {HttpClient} from "@angular/common/http";
 import {Movie} from "../movie";
-
 const options = {
   method: 'GET',
   headers: {
@@ -16,27 +15,51 @@ const options = {
   styleUrls: ['./home.component.scss'],
 
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit{
+  @Input() data1Value:any;
   movies:Movie[];
   posts: | any;
+  id:number;
   results: any;
-  images:any[]=[];
-  constructor(private movieService:MovieService,
+  constructor(public movieService:MovieService,
               private http:HttpClient,
   ) {
-    http.get('https://api.themoviedb.org/3/movie/popular?api_key=81ee722327f8c3ed2d344aae9a48bae2')
-      .subscribe(response=>{
-        this.results=response;
-        this.posts=this.results.results;
-        console.log(this.posts);
-      })
   }
 
-  getMovies():void{
-    this.movieService.getMovies()
-      .subscribe(movies=>{
-        this.movies=movies;
+  ngOnInit() {
+    this.fetchUpcomingMovies()
+  }
+
+
+  fetchUpcomingMovies() {
+    const  apiKey = '81ee722327f8c3ed2d344aae9a48bae2';
+    const url = `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}`;
+
+    this.http.get(url)
+      .subscribe(response => {
+        this.results = response;
+        this.posts = this.results.results;
+        console.log(this.posts);
       });
   }
+
+  changeGetUpData(event:any){
+    const value = event.target.getAttribute('data-value');
+    const  apiKey = '81ee722327f8c3ed2d344aae9a48bae2';
+    const url = `https://api.themoviedb.org/3/movie/${value}?api_key=${apiKey}`;
+
+    this.http.get(url)
+      .subscribe(response => {
+        this.results = response;
+        this.posts = this.results.results;
+        console.log(this.posts);
+      });
+  }
+  holdId(id:any){
+    this.id=id;
+  }
+
+
+  protected readonly onclick = onclick;
 }
 

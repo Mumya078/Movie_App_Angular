@@ -1,8 +1,8 @@
 <div class="container">
-  <div class="row d-flex justify-content-center">
+  <div class="row justify-content-center">
     <search></search>
     <div class="justify-content-center d-flex">
-      <slider></slider>
+      <slider ></slider>
     </div>
     <section>
     <div class="container">
@@ -13,31 +13,31 @@
               <nav class="navbar-expand navbar container">
                 <div class="container-md justify-content-between container-fluid">
                   <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav justify-content-center container-fluid">
+                    <ul class="navbar-nav justify-content-center container-fluid" >
                       <li class="nav-item">
-                          <div>
-                            <a  class="nav-link active yazi1" aria-current="page" style="color: white">
+                          <div class="d-flex">
+                            <a data-value="now_playing" class="fonta nav-link active yazi1" aria-current="page" href="javascript:void(0);" (click)="changeGetUpData($event)" style="color: white">
                               NowPlaying
                             </a>
                           </div>
                       </li>
                       <li class="nav-item">
-                        <div>
-                          <a  class="nav-link active yazi1" aria-current="page" style="color: white">
+                        <div class="d-flex">
+                          <a data-value="upcoming" class="fonta nav-link active yazi1" aria-current="page" href="javascript:void(0);" (click)="changeGetUpData($event)" style="color: white">
                             Upcoming
                           </a>
                         </div>
                       </li>
                       <li class="nav-item">
-                        <div>
-                          <a  class="nav-link active yazi1" aria-current="page" style="color: white">
+                        <div class="d-flex">
+                          <a data-value="top_rated" class="fonta nav-link active yazi1" aria-current="page" href="javascript:void(0);" (click)="changeGetUpData($event)" style="color: white">
                             TopRated
                           </a>
                         </div>
                       </li>
                       <li class="nav-item">
-                        <div>
-                          <a  class="nav-link active yazi1" aria-current="page" style="color: white">
+                        <div class="d-flex">
+                          <a data-value="popular" href="javascript:void(0);" (click)="changeGetUpData($event)" class="nav-link active yazi1 fonta" aria-current="page" style="color: white">
                             Popular
                           </a>
                         </div>
@@ -49,9 +49,11 @@
         </div>
         <!-- /section title -->
         <div class="container mt-5">
-          <div class="product-container" style="padding-bottom: 60px">
-            <div *ngFor="let post of posts" class="product-card">
-              <img class="imgs" [src]="'https://image.tmdb.org/t/p/w500' + post.poster_path">
+          <div class="product-container product1" style="padding-bottom: 60px">
+            <div *ngFor="let post of posts" class="product-card prod">
+              <a routerLink="/detail/{{post.id}}" (click)="holdId(post.id)">
+               <img class="imgs" [src]="'https://image.tmdb.org/t/p/w500' + post.poster_path">
+              </a>
             </div>
             <!-- Diğer ürün kartları buraya eklenir -->
           </div>
@@ -62,3 +64,4 @@
     </section>
 </div>
 
+</div>

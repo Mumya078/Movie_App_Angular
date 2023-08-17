@@ -1,15 +1,16 @@
-<div class="card" *ngIf="moviie">
-  <div class="card-body">
-  <span>
-    id:{{ moviie?.id}} name:{{moviie?.name}}
-  </span>
-    <div class="input-group">
-      <input type="text" [(ngModel)]="moviie.name" class="form-control">
-      <div class="input-group-append">
-        <button class="btn btn-outline-secondary" type="button">
-          Update
-        </button>
+<div *ngIf="results">
+  <div>
+    <div class="container justify-content-center d-flex">
+      <div class="container-fluid d-flex bnc">
+       <img class="imga"  [src]="'https://image.tmdb.org/t/p/w500'+ results.backdrop_path">
       </div>
+    </div>
+
+  </div>
+
+  <div class="container-fluid d-flex">
+    <div class="d-flex poster">
+      <img class="imga br" [src]="'https://image.tmdb.org/t/p/w500'+ results.poster_path">
     </div>
   </div>
 </div>

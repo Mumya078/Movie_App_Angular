@@ -1,18 +1,16 @@
+
 <div class="slider">
   <div id="carouselExample" class="carousel slide">
     <div class="carousel-inner">
-      <div class="carousel-item active c-item">
-        <img src="assets/img/car.jpg" class="d-block w-100 c-img" alt="...">
+
+      <div *ngFor="let post of posts2; let i = index" class="carousel-item c-item" [ngClass]="{'active': i === currentSlideIndex}">
+        <img [src]="'https://image.tmdb.org/t/p/w500' + post.poster_path" class="d-block w-100 c-img" alt="...">
         <span class="span">
-          1
-        </span>
+    {{ i + 1 }}
+  </span>
       </div>
-      <div class="carousel-item c-item">
-        <img src="assets/img/elec.jpg" class="d-block w-100 c-img"  alt="...">
-        <span class="span">
-          2
-        </span>
-      </div>
+
+
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>

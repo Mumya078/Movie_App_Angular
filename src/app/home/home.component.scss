@@ -131,3 +131,32 @@
   border-radius: 16px;
 }
 
+.fonta{
+  font-family: 'Roboto Mono', monospace;
+}
+
+.topb{
+  justify-content: flex-start;
+  display: flex;
+}
+
+.fontop{
+  font-family: 'Roboto Mono', monospace;
+  font-size: 10px;
+}
+
+.product1{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Kartları sola hizala */
+}
+
+.prod{
+  flex: 0 0 auto; /* Kartların boyutlarını değiştirmeden sola hizala */
+  margin: 5px; /* İsteğe bağlı olarak kartların arasına boşluk ekleyebilirsiniz */
+  text-align: center; /* İçeriği yatayda ortala */
+}
+
+
+
+

@@ -1,0 +1,51 @@
+.banner{
+  width: 100%;
+  height: 100%;
+}
+
+.bnc{
+  max-width: 800px;
+  max-height: 300px;
+  min-height: 280px;
+  position: absolute;
+  z-index: -0.5;
+  object-fit: contain;
+  display: flex;
+  justify-content: center;
+}
+.imgb{
+  border-radius: 0px 0px 16px 16px;
+  object-fit: cover;
+
+}
+
+.imga{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.br{
+  border-radius: 16px;
+}
+
+.poster{
+  max-width: 245px;
+  max-height: 470px;
+  min-height: 150px;
+  z-index: 1;
+  border: deepskyblue solid 2px;
+  border-radius: 16px;
+  justify-content: flex-start;
+
+}
+.mybos {
+  padding-left: 50px;
+}
+
+@media(max-width: 677px) {
+  .poster{
+    width: 34%;
+    height: 34%;
+  }
+}

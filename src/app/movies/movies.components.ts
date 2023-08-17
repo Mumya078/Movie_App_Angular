@@ -4,6 +4,7 @@ import {MoviesList} from "../movie.datasource";
 import {MovieComponent} from "../movie/movie.component";
 import {MovieService} from "../movie.service";
 import {HttpClient} from "@angular/common/http";
+import {HomeComponent} from "../home/home.component";
 
 const options = {
   method: 'GET',
