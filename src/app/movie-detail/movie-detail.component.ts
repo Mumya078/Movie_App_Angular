@@ -5,14 +5,19 @@ import {HttpClient} from "@angular/common/http";
 import {ActivatedRoute} from "@angular/router";
 import {ParamMap} from "@angular/router";
 import {MovieService} from "../movie.service";
+import {AboutComponent, getAbout} from "./about/about.component";
 
 @Component({
   selector: 'movie-detail',
   templateUrl: './movie-detail.component.html',
   styleUrls: ['./movie-detail.component.scss']
 })
+
+
 export class MovieDetailComponent implements OnInit{
 
+  aboutComponent = getAbout();
+  selectedTemp:number=0;
   @Input()moviie:Movie
   @Input()id:number;
   results: any;
@@ -26,10 +31,11 @@ export class MovieDetailComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    this.getdata()
     this.router.paramMap.subscribe((params: ParamMap) => {
       const id = Number(params.get('id'));
-      this.fetchId(id)
     });
+    this.selectedTemp=0;
   }
 
   fetchId(id:any) {
@@ -43,6 +49,15 @@ export class MovieDetailComponent implements OnInit{
       });
   }
 
+  getdata(){
+    this.router.paramMap.subscribe((params: ParamMap) => {
+      const id = Number(params.get('id'));
+      this.fetchId(id)
+    });
+  }
+
+
   protected readonly screen = screen;
+  protected readonly AboutComponent = AboutComponent;
 }
 

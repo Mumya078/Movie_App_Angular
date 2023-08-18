@@ -16,6 +16,9 @@ import { SearchComponent } from './search/search.component';
 import { SliderComponent } from './slider/slider.component';
 import { MenuComponent } from './menu/menu.component';
 import { HttpClientModule} from "@angular/common/http";
+import { AboutComponent } from './movie-detail/about/about.component';
+import { CastComponent } from './movie-detail/cast/cast.component';
+import { ReviewComponent } from './movie-detail/review/review.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { HttpClientModule} from "@angular/common/http";
     TopbarComponent,
     SearchComponent,
     SliderComponent,
-    MenuComponent
+    MenuComponent,
+    AboutComponent,
+    CastComponent,
+    ReviewComponent
   ],
   imports: [
     BrowserModule,

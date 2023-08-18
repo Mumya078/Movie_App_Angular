@@ -1,16 +1,94 @@
 <div *ngIf="results">
-  <div>
     <div class="container justify-content-center d-flex">
       <div class="container-fluid d-flex bnc">
-       <img class="imga"  [src]="'https://image.tmdb.org/t/p/w500'+ results.backdrop_path">
+       <img class="imga imgb"  [src]="'https://image.tmdb.org/t/p/w500'+ results.backdrop_path">
       </div>
     </div>
 
-  </div>
 
   <div class="container-fluid d-flex">
     <div class="d-flex poster">
       <img class="imga br" [src]="'https://image.tmdb.org/t/p/w500'+ results.poster_path">
     </div>
+    <div class="dsv" style="color: white">
+      <p class="yaz1">
+        {{results.title}}
+      </p>
+    </div>
+  </div>
+    <div class="container tpb">
+        <div class="justify-content-center container-fluid d-flex">
+            <ul class="justify-content-center d-flex container-fluid">
+              <li class="li" >
+                <div class="justify-content-center d-flex desc">
+                  <i class="fa-solid fa-calendar-days fa-lg iconn"></i>
+                  {{results.release_date}} |
+                </div>
+              </li>
+
+              <li class="li">
+                <div class="justify-content-center d-flex desc">
+                  <i class="fa-solid fa-clock fa-lg iconn"></i>
+                  {{results.runtime}} Minutes |
+                </div>
+              </li>
+
+              <li class="li">
+                <div class="justify-content-center d-flex desc">
+                  {{results.genres[0].name}}
+                </div>
+              </li>
+            </ul>
+        </div>
+
+      <div class="container van">
+        <nav class="navbar-expand navbar container-fluid">
+          <div class="container-md justify-content-between container-fluid">
+              <ul class="navbar-nav justify-content-between container-fluid" >
+                <li class="nav-item">
+                  <div class="d-flex">
+                    <a data-value="about" (click)="selectedTemp=1" class="fonta nav-link active nwyz" aria-current="page" href="javascript:void(0);" style="color: white">
+                      About Movie
+                    </a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <div class="d-flex">
+                    <a data-value="review" (click)="selectedTemp=2" class="fonta nav-link active nwyz" aria-current="page" href="javascript:void(0);" style="color: white">
+                      Reviews
+                    </a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <div class="d-flex">
+                    <a data-value="cast" (click)="selectedTemp=3" class="fonta nav-link active nwyz" aria-current="page" href="javascript:void(0);" style="color: white">
+                      Cast
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+        </nav>
+      </div>
+    </div>
+
+  <div class="container">
+    <ng-container *ngIf="selectedTemp==1">
+      <about></about>
+    </ng-container>
+    <ng-container *ngIf="selectedTemp==2">
+      <review></review>
+    </ng-container>
+    <ng-container *ngIf="selectedTemp==3">
+      <cast></cast>
+    </ng-container>
+    <ng-container *ngIf="selectedTemp==0">
+      <div class="container-fluid d-flex justify-content-center">
+        <div class="d-flex justify-content-center bos1 yazi11">
+          {{results.overview}}
+        </div>
+      </div>
+    </ng-container>
+
   </div>
 </div>

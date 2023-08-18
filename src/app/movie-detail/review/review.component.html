@@ -1,0 +1,34 @@
+<div class="container justify-content-center">
+  <div class="container-fluid d-flex justify-content-center">
+    <div class="main">
+      <div class="str" *ngFor="let item of results.results;let i = index">
+        <div class="col-md-3 float-start parts">
+          <div class="pp" *ngIf="results?.results[i]?.author_details?.avatar_path != null ; else elseBlock">
+            <img class="imgs" [src]="'https://image.tmdb.org/t/p/w200' + results.results[i].author_details.avatar_path">
+          </div>
+          <ng-template #elseBlock>
+            <div class="pp bg-transparent">
+              <img class="imgs" src="assets/img/unks.png">
+            </div>
+          </ng-template>
+          <div class="rate" *ngIf="results?.results[i]?.author_details?.rating !=null ; else elseBlock2">
+            {{results?.results[i].author_details?.rating}}
+          </div>
+          <ng-template #elseBlock2>
+            <div class="rate">
+              ?
+            </div>
+          </ng-template>
+        </div>
+        <div class="col-9 float-start parts">
+          <h5 class="ttl">
+            {{results?.results[i]?.author_details?.username}}
+          </h5>
+          <div class="dldr">
+              {{results?.results[i]?.content}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

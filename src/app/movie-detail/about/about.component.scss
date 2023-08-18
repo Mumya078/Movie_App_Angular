@@ -1,0 +1,26 @@
+.cont{
+  width: 800px;
+  height: 120px;
+  margin-bottom: 100px;
+  margin-top: 50px;
+}
+.yazi1{
+  font-size: 16px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+@media(max-width: 677px){
+  .cont{
+    width: 400px;
+    height: 160px;
+    margin-bottom: 40px;
+    margin-top: 10px;
+  }
+  .yazi1{
+    font-size: 12px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+  }
+}
