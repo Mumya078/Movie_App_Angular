@@ -1,3 +1,19 @@
-<div style="background-color: blue; color: white;width: 200px;height: 200px">
-  cast
+<div class="container main">
+  <div *ngFor="let item of results?.cast;let i=index">
+    <div *ngIf="i<=30">
+    <div class="card1">
+      <div *ngIf="results?.cast[i]?.profile_path != null;else elseblock" class="d-flex">
+        <img class="imgs" [src]="'https://image.tmdb.org/t/p/w200' + results?.cast[i]?.profile_path">
+      </div>
+      <ng-template #elseblock>
+        <div class="d-flex">
+          <img class="imgs" src="assets/img/unknw.jpg">
+        </div>
+      </ng-template>
+      <div class="name">
+        {{results?.cast[i]?.name}}
+      </div>
+    </div>
+    </div>
+  </div>
 </div>

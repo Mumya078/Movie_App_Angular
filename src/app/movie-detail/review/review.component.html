@@ -1,10 +1,10 @@
 <div class="container justify-content-center">
   <div class="container-fluid d-flex justify-content-center">
     <div class="main">
-      <div class="str" *ngFor="let item of results.results;let i = index">
+      <div class="str" *ngFor="let item of results?.results;let i = index">
         <div class="col-md-3 float-start parts">
           <div class="pp" *ngIf="results?.results[i]?.author_details?.avatar_path != null ; else elseBlock">
-            <img class="imgs" [src]="'https://image.tmdb.org/t/p/w200' + results.results[i].author_details.avatar_path">
+            <img class="imgs" [src]="'https://image.tmdb.org/t/p/w200' + results?.results[i]?.author_details?.avatar_path">
           </div>
           <ng-template #elseBlock>
             <div class="pp bg-transparent">
@@ -12,7 +12,7 @@
             </div>
           </ng-template>
           <div class="rate" *ngIf="results?.results[i]?.author_details?.rating !=null ; else elseBlock2">
-            {{results?.results[i].author_details?.rating}}
+            {{results?.results[i]?.author_details?.rating}}
           </div>
           <ng-template #elseBlock2>
             <div class="rate">

@@ -1,0 +1,65 @@
+.main{
+  width: 800px;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Kartları sola hizala */
+  margin-bottom: 80px;
+  margin-top: 30px;
+}
+.card1{
+width: 258px;
+  height: 250px;
+  flex: 0 0 auto; /* Kartların boyutlarını değiştirmeden sola hizala */
+  text-align: center; /* İçeriği yatayda ortala */
+  place-items: center;
+  margin-bottom: 10px;
+
+}
+.imgs{
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 10px;
+  margin-left: 42px;
+}
+.name{
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  margin-top: 5px;
+  color: white;
+  text-align: center;
+}
+
+@media (max-width:677px) {
+  .main{
+    width: 350px;
+    height: auto;
+  }
+
+  .card1 {
+    width: 160px;
+    height: 150px;
+    flex: 0 0 auto; /* Kartların boyutlarını değiştirmeden sola hizala */
+    text-align: center; /* İçeriği yatayda ortala */
+    place-items: center;
+    margin-bottom: 35px;
+  }
+
+  .imgs{
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 5px;
+    margin-left: 20px;
+  }
+  .name{
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    margin-top: 5px;
+    color: white;
+    text-align: center;
+  }
+}

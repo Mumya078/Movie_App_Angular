@@ -54,3 +54,40 @@
   font-size: 40px ;
   margin-top: 2px;
 }
+
+@media(max-width: 677px){
+  .str{
+    width: 350px;
+    height: auto;
+  }
+  .parts{
+    height: 98px;
+  }
+  .rate{
+    font-size: 22px;
+    margin-top: 4px;
+  }
+  .imgs{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+  }
+  .ttl{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: white;
+    padding-left: 8px;
+    padding-top: 8px;
+  }
+  .dldr{
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    color: white;
+    padding-left: 4px;
+    padding-top: 4px;
+  }
+}

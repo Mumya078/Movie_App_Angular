@@ -5,9 +5,15 @@
   align-items: center;
   text-align: center;
 }
+
+.orta2{
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
 .searchbar{
   width: 100%;
-  max-width:400px;
+  max-width:600px;
   background: rgba(255,255,255,0.2);
   display: flex;
   align-items: center;
@@ -22,10 +28,10 @@
       outline: none;
       padding: 5px 5px;
       font-size: 16px;
-      color: #67686D;
+      color: white;
     }
   ::placeholder{
-    color: #67686D;
+    color: white;
     margin-left: 50px;
   }
   button{
@@ -38,5 +44,142 @@
     height: 40px;
     background: transparent;
     cursor: pointer;
+  }
+}
+
+.boslk{
+  width: 800px;
+  height: auto;
+  justify-content: center;
+  display: flex;
+  place-items: center;
+}
+
+.liste{
+width: 600px;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+.eleman{
+  float: left;
+  display: flex;
+}
+.imgs{
+  width: 175px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: deepskyblue solid 2px;
+}
+.ttle{
+  color: white;
+  font-size: 19px;
+  font-family: 'Poppins', sans-serif;
+  padding-top: 15px;
+}
+.temp{
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  color: white;
+}
+.tmmain{
+  margin-top: 115px;
+  margin-left: 200px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+}
+.empty{
+  width: 400px;
+  height: 300px;
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.byt{
+  width: 200px;
+  height: 200px;
+}
+.bytfnt{
+  width: 400px;
+  height: auto;
+  color: white;
+  font-size: 28px;
+  font-family: 'Montserrat', sans-serif;
+}
+.spec{
+  width: 300px;
+  display: flex;
+}
+
+@media(max-width: 677px){
+  .liste{
+    width: 350px;
+    height: auto;
+    margin-bottom: 30px;
+  }
+  .imgs{
+    width: 130px;
+    height: 185px;
+    object-fit: cover;
+    border-radius: 16px;
+    border: deepskyblue solid 2px;
+  }
+  .ttle{
+    color: white;
+    margin-bottom: 1px;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    padding-top: 5px;
+    padding-left: 10px;
+  }
+  .temp{
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    padding-left: 10px;
+    color: white;
+  }
+  .tmmain{
+    margin-top: 80px;
+    margin-left: 130px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 3;
+  }
+  .empty{
+    width: 300px;
+    height: 200px;
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    place-items: center   ;
+  }
+  .boslk{
+    width: 300px;
+    height: auto;
+    justify-content: center;
+    display: flex;
+    margin-left: 50px;
+  }
+
+  .byt{
+    width: 150px;
+    height: 150px;
+  }
+  .bytfnt{
+    width: 200px;
+    height: auto;
+    color: white;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
   }
 }

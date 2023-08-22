@@ -4,7 +4,9 @@
     <div class="carousel-inner">
 
       <div *ngFor="let post of posts2; let i = index" class="carousel-item c-item" [ngClass]="{'active': i === currentSlideIndex}">
-        <img [src]="'https://image.tmdb.org/t/p/w500' + post.poster_path" class="d-block w-100 c-img" alt="...">
+        <a routerLink="/detail/{{post.id}}">
+          <img [src]="'https://image.tmdb.org/t/p/w500' + post.poster_path" class="d-block w-100 c-img" alt="...">
+        </a>
         <span class="span">
     {{ i + 1 }}
   </span>
