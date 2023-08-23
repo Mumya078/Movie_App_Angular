@@ -2,6 +2,9 @@ import {Component, Input, OnInit, Output} from '@angular/core';
 import {MovieService} from "../movie.service";
 import {HttpClient} from "@angular/common/http";
 import {Movie} from "../movie";
+import{ActivatedRoute} from "@angular/router";
+import{TitleService} from "../title.service";
+
 const options = {
   method: 'GET',
   headers: {
@@ -21,13 +24,18 @@ export class HomeComponent implements OnInit{
   posts: | any;
   id:number;
   results: any;
+  pageTitle:string="home";
   constructor(public movieService:MovieService,
               private http:HttpClient,
+              private route: ActivatedRoute,
+              private titleService: TitleService
   ) {
   }
 
   ngOnInit() {
     this.fetchUpcomingMovies()
+
+
   }
 
 

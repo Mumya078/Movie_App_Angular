@@ -16,11 +16,14 @@ import {AboutComponent, getAbout} from "./about/about.component";
 
 export class MovieDetailComponent implements OnInit{
 
+  pagetitle:string="Detail"
   aboutComponent = getAbout();
   selectedTemp:number=0;
   @Input()moviie:Movie
   @Input()id:number;
+
   results: any;
+
   posts: | any;
   constructor(
     private http:HttpClient,
@@ -36,6 +39,7 @@ export class MovieDetailComponent implements OnInit{
       const id = Number(params.get('id'));
     });
     this.selectedTemp=0;
+    this.setresults()
   }
 
   fetchId(id:any) {
@@ -54,6 +58,11 @@ export class MovieDetailComponent implements OnInit{
       const id = Number(params.get('id'));
       this.fetchId(id)
     });
+  }
+
+  setresults(){
+    const rs = this.results;
+    this.movieService.setResults(rs);
   }
 
 

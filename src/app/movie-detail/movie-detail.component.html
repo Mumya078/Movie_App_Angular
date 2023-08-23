@@ -1,11 +1,10 @@
+<topbar [pageTitle]="pagetitle" [results]="results"></topbar>
 <div *ngIf="results">
     <div class="container justify-content-center d-flex">
       <div class="container-fluid d-flex bnc">
        <img class="imga imgb"  [src]="'https://image.tmdb.org/t/p/w500'+ results.backdrop_path">
       </div>
     </div>
-
-
   <div class="container-fluid d-flex">
     <div class="d-flex poster">
       <img class="imga br" [src]="'https://image.tmdb.org/t/p/w500'+ results.poster_path">

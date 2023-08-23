@@ -28,8 +28,28 @@
   justify-content: space-between;
   justify-items: flex-start;
 }
+.rltp{
+  height: 80px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 26px;
+  justify-content: center;
+  display: flex;
+  place-items: center;
+  margin-bottom: 10px;
+  color: white;
+}
 
 @media (max-width: 768px) {
+  .rltp{
+    height: 60px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    justify-content: center;
+    display: flex;
+    place-items: center;
+    margin-bottom: 5px;
+    color: white;
+  }
 
   .c-item{
     height: 250px;
@@ -198,6 +218,7 @@
     background: transparent;
     cursor: pointer;
   }
+
 }
 
 

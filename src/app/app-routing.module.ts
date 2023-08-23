@@ -6,13 +6,16 @@ import {DashboardComponent} from "./dashboard/dashboard.component";
 import {HomeComponent} from "./home/home.component";
 import {MovieDetailComponent} from "./movie-detail/movie-detail.component";
 import {SearchComponent} from "./search/search.component";
+import {WatchlistComponent} from "./watchlist/watchlist.component";
 
 const routes:Routes=[
-  {path:'',redirectTo:'/home',pathMatch:'full'},
+  {path:'',redirectTo:'/home',pathMatch:'full',data:{title:'Home'}},
   {path:'movies',component:MoviesComponents},
-  {path:'detail/:id',component:MovieDetailComponent},
-  {path:'search',component:SearchComponent},
-  {path:'home',component:HomeComponent}
+  {path:'detail/:id',component:MovieDetailComponent,data:{title:'Detail'}},
+  {path:'search',component:SearchComponent,data:{title:'Search'}},
+  {path:'home',component:HomeComponent,data:{title:'Home'}},
+  {path:'watchlist',component:WatchlistComponent,data:{title:'Watchlist'}}
+
 ]
 
 @NgModule({

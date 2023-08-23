@@ -19,6 +19,7 @@ import { HttpClientModule} from "@angular/common/http";
 import { AboutComponent } from './movie-detail/about/about.component';
 import { CastComponent } from './movie-detail/cast/cast.component';
 import { ReviewComponent } from './movie-detail/review/review.component';
+import { WatchlistComponent } from './watchlist/watchlist.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ReviewComponent } from './movie-detail/review/review.component';
     MenuComponent,
     AboutComponent,
     CastComponent,
-    ReviewComponent
+    ReviewComponent,
+    WatchlistComponent
   ],
   imports: [
     BrowserModule,

@@ -11,6 +11,7 @@ export class SearchComponent {
   searchQuery:string='';
   searchResults:any[]=[];
   results:any;
+  pagetitle:string="Search";
 
   constructor(private movieSearchService:MovieSearchService,
               private  http:HttpClient){

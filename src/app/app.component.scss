@@ -6,3 +6,11 @@ h1{
 .backgroundgray{
   background: #242A32;
 }
+
+.page-content {
+  &.topbar-hidden {
+    topbar {
+      display: none;
+    }
+  }
+}

@@ -1,5 +1,6 @@
 .deneme{
-  height: 95px;
+  height: 75px;
+  margin-top: 25px;
 }
 
 .mymargin{
@@ -28,4 +29,44 @@
 .elm{
   color: white;
   justify-content: space-between;
+}
+.main{
+  font-size: 20px;
+  font-family: 'Roboto Mono', monospace;
+  color: white;
+  place-items: center;
+  justify-content: center;
+}
+.ttl{
+  font-size: 24px;
+  font-family: 'Roboto Mono', monospace;
+  color: white;
+  place-items: center;
+  justify-content: center;
+}
+.customlink{
+  display: inline-block;
+  place-items: center;
+  justify-content: center;
+}
+
+.ic{
+  width: 20px;
+  height: 30px;
+}
+@media (max-width: 677px) {
+  .main{
+    font-size: 14px;
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+    place-items: center;
+    justify-content: center;
+  }
+  .ttl{
+    font-size: 18px;
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+    place-items: center;
+    justify-content: center;
+  }
 }
