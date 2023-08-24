@@ -10,7 +10,7 @@
         </form>
       </div>
     </div>
-    <div class="boslk">
+    <div class="boslk" style="margin-bottom: 30px">
       <div *ngIf="searchResults.length>0;else elseblock" class="d-grid justify-content-center flex-column spec">
         <div class="liste" *ngFor="let rep of searchResults;let i=index">
           <div class="col-md-4 eleman d-flex">
@@ -19,7 +19,7 @@
             </a>
           </div>
           <div class="col-md-6 d-flex mmain">
-            <div class="ttle d-flex">
+            <div class="ttle" style="margin-top: 5px">
               {{searchResults[i]?.original_title}}
             </div>
               <div class="d-flex tmmain">

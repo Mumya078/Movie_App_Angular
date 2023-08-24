@@ -1,34 +1,45 @@
 <topbar [pageTitle]="pagetitle"></topbar>
-<div class="container" style="margin-bottom: 10px">
+<div class="container" style="margin-bottom: 60px">
+  <ng-container *ngIf="list.length===0;else showmore">
+    <div class="ort">
+      <div class="folder">
+        <img style="width: 140px;" src="assets/img/box.png">
+      </div>
+      <div class="folder" style="margin-top: 15px">
+        There Is No Movie Yet
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #showmore>
   <div class="d-flex" *ngFor="let item of list;let i=index" style="margin-bottom: 20px">
     <div class="col-md-3 d-flex justify-content-center">
       <div class="holderimg">
-        <img class="img" [src]="'https://image.tmdb.org/t/p/w500' + list[i]?.poster_path">
+        <a routerLink="/detail/{{list[i]?.id}}">
+          <img class="img" [src]="'https://image.tmdb.org/t/p/w500' + list[i]?.poster_path">
+        </a>
       </div>
     </div>
-    <div class="col-md-9 " >
+    <div class="col-md-9">
       <div class="main">
-        <div class="ttl">
-          {{list[i].title}}
-          <button (click)="popObject()" >
-            sil
-          </button>
-        </div>
-        <div class="extras">
-          <div class="elements" style="color: #FF8700">
-            <i class="fa-regular fa-star"></i> {{list[i].vote_average.toFixed(1)}}
+          <div class="ttl">
+            {{list[i].title}}
           </div>
-          <div class="elements">
-            <i class="fa-solid fa-ticket"></i> {{list[i].genres[0].name}}
+          <div class="extras">
+            <div class="elements" style="color: #FF8700">
+              <i class="fa-regular fa-star"></i> {{list[i].vote_average.toFixed(1)}}
+            </div>
+            <div class="elements">
+              <i class="fa-solid fa-ticket"></i> {{list[i].genres[0].name}}
+            </div>
+            <div class="elements">
+              <i class="fa-solid fa-calendar-days fa-lg"></i> {{list[0].release_date}}
+            </div>
+            <div class="elements">
+              <i class="fa-solid fa-clock"></i> {{list[i].runtime}} Minutes
+            </div>
           </div>
-          <div class="elements">
-            <i class="fa-solid fa-calendar-days fa-lg"></i> {{list[0].release_date}}
-          </div>
-          <div class="elements">
-            <i class="fa-solid fa-clock"></i> {{list[i].runtime}} Minutes
-          </div>
-        </div>
       </div>
     </div>
   </div>
+  </ng-template>
 </div>

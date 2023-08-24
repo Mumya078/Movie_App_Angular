@@ -3,6 +3,7 @@ import {TitleService} from "../title.service";
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import {MovieService} from "../movie.service";
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'topbar',
@@ -11,9 +12,13 @@ import {MovieService} from "../movie.service";
 })
 export class TopbarComponent implements OnInit{
   @Input() pageTitle: string;
-  @Input() results:any;
+  @Input() res:any;
+  @Input() list:any;
   movieList:any=this.movieservice.movielist;
-  constructor(private router: Router, private activatedRoute: ActivatedRoute,private movieservice:MovieService) {
+  constructor(private router: Router,
+              private activatedRoute: ActivatedRoute,
+              private movieservice:MovieService,
+              private location:Location) {
   }
 ngOnInit() {
   this.router.events
@@ -21,6 +26,7 @@ ngOnInit() {
     .subscribe(() => {
       this.pageTitle = this.getPageTitle(this.activatedRoute);
     });
+  console.log(this.movieList);
 }
   private getPageTitle(route: ActivatedRoute): string {
     while (route.firstChild) {
@@ -30,12 +36,24 @@ ngOnInit() {
   }
 
   updateObject(){
-    const newObj = this.results;
+    const newObj = this.res;
     this.movieservice.setObject(newObj);
   }
 
-  popObject(){
-    this.movieservice.deleteObject(this.results.id);
+  popObject(id:number){
+    this.movieservice.deleteObject(id);
 }
+
+control(id:number):boolean{
+    for (const movie of this.movieList){
+      if (movie.id===id){
+        return true;
+      }
+    }
+    return false;
+  }
+  goBack(){
+    this.location.back();
+  }
 
 }

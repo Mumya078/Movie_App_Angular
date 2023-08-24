@@ -8,18 +8,20 @@ import {MovieService} from "../movie.service";
 })
 export class WatchlistComponent implements OnInit{
 
-  results=this.movieService.getResults();
+  results:any;
   constructor(private movieService:MovieService) {
   }
 
   pagetitle:string="Watchlist";
-  list:any=this.movieService.getList()
+  list:any=this.movieService.updatedObject()
 
   ngOnInit() {
+    this.results=this.movieService.getResults();
     console.log(this.list);
   }
 
-  popObject(){
-    this.movieService.deleteObject(this.results.id);
+  popObject(id:number){
+    this.movieService.deleteObject(id);
+    this.movieService.updatedObject();
   }
 }

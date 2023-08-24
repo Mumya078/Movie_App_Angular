@@ -42,6 +42,10 @@ export class MovieService {
     console.log(this.movielist)
   }
 
+  updatedObject(){
+    return this.movielist;
+  }
+
   setResults(rs:any){
     this.rss=rs;
   }
@@ -49,9 +53,5 @@ export class MovieService {
     return this.rss;
     console.log(this.rss);
   }
-
-getList(){
-    return this.movielist;
-}
 
 }
